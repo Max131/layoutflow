@@ -16,13 +16,3 @@
 @import "components" layer(components);
 @import "pages" layer(pages);
 @import "utilities" layer(utilities);
-@import "external.css" layer(external);
-
-/**
- * Cascade Collision Styles Fixes
- */
-dialog.modal {
-  .modal-container {
-    position: unset;
-  }
-}
