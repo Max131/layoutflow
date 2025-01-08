@@ -1,0 +1,28 @@
+/*
+  Theme Name: Mercados
+  Author: Nodo
+  Author URI: https://nodo.pw/
+  Description: Mercados
+  Version: 1.0
+*/
+
+@layer reset, base, layout, components, pages, utils, external;
+
+@import "variables.css";
+@import "font.css";
+@import "modern-normalize" layer(reset);
+@import "base.css" layer(base);
+@import "layout" layer(layout);
+@import "components" layer(components);
+@import "pages" layer(pages);
+@import "utilities" layer(utilities);
+@import "external.css" layer(external);
+
+/**
+ * Cascade Collision Styles Fixes
+ */
+dialog.modal {
+  .modal-container {
+    position: unset;
+  }
+}

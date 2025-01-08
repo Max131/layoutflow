@@ -1,0 +1,11 @@
+@layer components {
+  .text-icon {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.5rem;
+
+    img {
+      height: 1cap;
+    }
+  }
+}

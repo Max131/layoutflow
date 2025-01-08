@@ -1,0 +1,27 @@
+fieldset(data-form-step="5", x-show="currentStep === +$el.dataset.formStep", x-transition, x-cloak)
+  legend Social
+  .field
+    label(for="pregunta_21") 5.1 ¿Qué acciones en específico realizas entre tus colaboradores, socios y clientes en torno a prácticas sostenibles y cómo promueves una comunicación clara, específica y medible sobre estas prácticas sostenibles? Ejemplo: La compra de nuestros insumos o productos procede de 4 proveedores locales, de Xochimilco, Magdalena Contreras y Milpa Alta que implementan buenas prácticas para lograr su producción. En nuestro menú mencionamos el origen de más de 30 ingredientes y destacamos el trabajo colaborativo con productoras y productores.
+    textarea(id="pregunta_21", name="pregunta_21")
+
+  .field
+    label(for="pregunta_22") 5.2 Menciona como en la medida de lo posible, su iniciativa promueve el pago justo a las y los productores. Ejemplo: Implementamos el comercio justo entre nuestros proveedores y consumidores, con este método de trabajo beneficiamos a 30 productores y productoras.
+    textarea(id="pregunta_22", name="pregunta_22")
+
+  .field
+    label(for="pregunta_23") 5.3 ¿Cómo sus actividades promueven la erradicación del uso de sustancias peligrosas que dañan a la gente y a los ecosistemas? Ejemplo: En nuestro establecimiento empleamos productos biodegradables para la limpieza de instalaciones, así como para el lavado de insumos y utensilios en cocina. Adicionalmente, contamos con sistema de trampa de grasas que impide que estas lleguen al sistema de drenaje.
+    textarea(id="pregunta_23", name="pregunta_23")
+
+  .field
+    label(for="pregunta_24") 5.5 Mencione si su empresa fomenta la participación e inclusión de jóvenes y mujeres en sus actividades y cómo lo hace. Ejemplo: En nuestra empresa fomentamos que los jóvenes realicen prácticas en las diferentes áreas de trabajo con la finalidad de que identifiquen sus habilidades y desarrollen un plan de especialización.
+    textarea(id="pregunta_24", name="pregunta_24")
+
+  .field
+    label(for="file") 5.5 Mencione ¿Cuántas hectáreas son impactadas con un mejor manejo de los recursos naturales gracias a su compra?
+    p Para responder, descarga el formato del siguiente enlace, llenalo y adjuntalo en el siguiente campo: #[a(href="#!") Formato de Trazabilidad].
+    .field
+      label.button.is-outlined.is-file(x-data="inputfile", for="file", tabindex="0") Seleccionar archivo:
+        span.has-text-accent(x-text="filename")
+        input(type="file", id="file", name="file", accept=".xls, .xlsx", hidden, x-bind="filefield")
+
+

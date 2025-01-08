@@ -1,0 +1,15 @@
+@layer components {
+  #searchform {
+    .input-container {
+      border: 0;
+    }
+
+    input {
+      color: currentcolor;
+
+      &[type="submit"] {
+        width: unset;
+      }
+    }
+  }
+}

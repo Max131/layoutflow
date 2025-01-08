@@ -1,0 +1,29 @@
+.login-form {
+  --container-width: 24rem;
+  --color-background: var(--grey-pale);
+
+  width: min(32rem, 100%);
+  padding-top: 2rem;
+  padding-bottom: 0;
+  border: 2px solid var(--color-disabled);
+  border-radius: 0.5rem;
+  background: var(--color-background);
+  margin-block: 4rem;
+  margin-inline: auto;
+
+  input {
+    background-color: var(--white);
+  }
+}
+
+.login-logo {
+  display: block;
+  max-width: 6rem;
+  margin-inline: auto;
+}
+
+.login-banner {
+  width: 100%;
+  height: auto;
+  margin-top: 3rem;
+}

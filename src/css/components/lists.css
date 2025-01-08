@@ -1,0 +1,15 @@
+.contact-data {
+  li {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+  }
+}
+
+.no-bullets {
+  padding-left: 0;
+  list-style: none;
+
+  li:not(:last-child) {
+    margin-bottom: 0.5em;
+  }
+}

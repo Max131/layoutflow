@@ -1,0 +1,15 @@
+extends ../templates/default
+block vars
+ - title = "Cuenta creada"
+ - classes = ""
+block content
+  .container
+    .modal-container
+      p.title-m.has-text-success.has-text-centered.is-uppercase ¡Tu cuenta ha sido aprobada!
+      p #[strong Tu cuenta ha sido aprobada], ahora tienes la oportunidad de editar tu perfil para agregar la información relacionada a ti y a tu producto.
+      p Te damos las gracias por responder a nuestra convocatoria e interesarte en compartir tus productos con nosotros para llegar a más gente.
+      p Agradecemos tu paciencia y te damos la bienvenida.
+
+      .buttons.are-vertical
+        a.button.is-fullwidth(href="perfil.html") Editar tu perfil
+

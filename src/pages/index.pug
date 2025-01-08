@@ -1,0 +1,89 @@
+extends ../templates/default
+block vars
+ - title = "Inicio"
+ - classes = "home"
+block content
+  .container
+    section.hero
+      .hero-container
+        // Hero Card
+        div.hero-card
+          // Imagen Hero Card
+          img.hero-image(src="images/demo/image-4.jpg", alt="", loading="lazy")
+          // Contenido Hero Card
+          .container.hero-card-container
+            .hero-content.is-flex.is-columns.is-centered
+              // Título Hero Card
+              p.text-bold-italic-l.has-text-white.is-uppercase Genera impacto real en México
+              h2.title-l.has-text-white.is-uppercase Transformemos comunidades y restauremos paisajes juntos.
+              p.text-lg.has-text-white.is-balanced MFS es la plataforma para facilitar, acelerar y ampliar la inversión y financiamiento socioambiental con verdadero impacto en los paisajes prioritarios de México.
+              .buttons.mt-3
+                a.button.is-large(href="#") Quienes somos
+                a.button.is-secondary.is-large(href="#") Nuestras soluciones
+
+    section.is-fullwidth.home-discover
+      .grid.columns-1.home-discover-container
+        .home-discover-header.span-2
+           h2.title-m.has-text-primary.is-uppercase Descubre cómo creamos impacto
+        .grid.columns-2
+          article.card.card-discover
+            h3.title-second-l Para Inversionistas
+            .card-discover-text
+              p.text-regular-italic-l Transforma el futuro con inversiones que impulsan la naturaleza.
+            .buttons.are-right
+              a.mt-1.button.is-large.is-white(href="#") Conoce más
+          article.card.card-discover
+            h3.title-second-l Para Socios de Impacto
+            .card-discover-text
+              p.text-op50-l (Consumidores / productores / comercializadores)
+              p.text-regular-italic-l Realiza compras responsables y únete al movimiento para la regeneración de la naturaleza
+            .buttons.are-right
+              a.mt-1.button.is-large.is-white(href="#") Conoce más
+
+    section.grid.home-news.columns-1
+      div
+         h2.title-m.is-uppercase Noticias
+      .grid.columns-1
+        article.card.card-post-featured
+          img(src="images/demo/image-3.jpg", alt="", loading="lazy")
+          div.card-post-content
+            h3.title-m.has-text-accent LA ORGANIZACIÓN (LO), ORGULLO OAXAQUEÑO EN TU TAZA DE CAFÉ
+            p.text-semibold-s.has-text-accent 27 de julio de 2023
+            p Oaxaca es una de las entidades mexicanas más vastas en tradiciones y celebraciones de las raíces nacionales; es un estado donde habitan poblaciones originarias que son inspiración y orgullo. Oaxaca destaca también por su producción de café, que se ubica en el 4º mayor productor del país.
+            .buttons
+              a.button-is-text(href="#") Continuar leyendo >>
+      .grid.columns-2.is-gap-row3
+        article.card.card-post
+          img(src="images/demo/image-1.jpg", alt="", loading="lazy")
+          div.card-post-content
+            h3.title-xs-500.has-text-accent.is-uppercase Unidos para promover el mercado responsable de...
+            p.text-semibold-s.has-text-accent 27 de julio de 2023
+            p Los pasados 15 y 16 de junio de 2023 se celebró la Cumbre de Madera de Conservación de la Selva Maya 2023, el foro comercial que reunió a compradores de madera, inversionistas, representantes...
+            .buttons
+              a.button-is-text(href="#") Continuar leyendo >>
+        article.card.card-post
+          img(src="images/demo/image-1.jpg", alt="", loading="lazy")
+          div.card-post-content
+            h3.title-xs-500.has-text-accent.is-uppercase Unidos para promover el mercado responsable de...
+            p.text-semibold-s.has-text-accent 27 de julio de 2023
+            p Los pasados 15 y 16 de junio de 2023 se celebró la Cumbre de Madera de Conservación de la Selva Maya 2023, el foro comercial que reunió a compradores de madera, inversionistas, representantes...
+            .buttons
+              a.button-is-text(href="#") Continuar leyendo >>
+        article.card.card-post
+          img(src="images/demo/image-1.jpg", alt="", loading="lazy")
+          div.card-post-content
+            h3.title-xs-500.has-text-accent.is-uppercase Unidos para promover el mercado responsable de...
+            p.text-semibold-s.has-text-accent 27 de julio de 2023
+            p Los pasados 15 y 16 de junio de 2023 se celebró la Cumbre de Madera de Conservación de la Selva Maya 2023, el foro comercial que reunió a compradores de madera, inversionistas, representantes...
+            .buttons
+              a.button-is-text(href="#") Continuar leyendo >>
+        article.card.card-post
+          img(src="images/demo/image-1.jpg", alt="", loading="lazy")
+          div.card-post-content
+            h3.title-xs-500.has-text-accent.is-uppercase Unidos para promover el mercado responsable de...
+            p.text-semibold-s.has-text-accent 27 de julio de 2023
+            p Los pasados 15 y 16 de junio de 2023 se celebró la Cumbre de Madera de Conservación de la Selva Maya 2023, el foro comercial que reunió a compradores de madera, inversionistas, representantes...
+            .buttons
+              a.button-is-text(href="#") Continuar leyendo >>
+      .buttons.are-centered.mt-4
+        a.button.is-large(href="#") Ver todas las noticias

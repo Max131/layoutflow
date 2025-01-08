@@ -1,0 +1,187 @@
+fieldset(data-form-step="3", x-show="currentStep === +$el.dataset.formStep", x-transition, x-cloak)
+  //- legend Datos
+  // TODO: Cambiar el input
+  .field
+    label(data-required) Encuentralo en:
+    p.is-label-subtitle Agrega los logotipos de los negocios y escribe el enlace de la página oficial
+    .input-file-multiple(x-data="inputfileMultiple")
+      label.input-file-multiple-label(for="product_logo", tabindex="0", x-bind="label") Click aquí para subir archivos
+      input(type="file", id="product_logo", name="product_logo", multiple, hidden, x-bind="filefield")
+      .input-file-list
+        template(x-for="(file, index) in files" :key="file.name")
+          .input-container
+            input(type="text", disabled, :value="`${file.name} (${getFileSize(file.size)})`")
+            button.text-md(type="button", @click="removeFile(index)") &times;
+
+    // NOTE: Nota para archivos
+    p.text-sm.my-0(role="note")
+      strong Nota:
+      | Los archivos que selecciones, reemplazarán a los anteriores (en caso de existir).
+
+    // NOTE: Lista de archivos
+    article.current-files.mt-0
+      p.my-0 Archivo actual:
+      .input-file-list.my-1
+        .input-container
+          input(type="text", disabled, value="archivo1.jpg")
+        .input-container
+          input(type="text", disabled, value="archivo2.jpg")
+        .input-container
+          input(type="text", disabled, value="archivo2.jpg")
+
+  .field
+    label Enlace a página web #[span.has-text-grey (Referente al negocio)]
+    div(x-data="socialMedia")
+      template(x-for="(net, index) in networks")
+        .field
+          .input-container
+            input(disabled, :value="net")
+            button.text-md.button.is-danger(type="button", aria-label="Quitar red social", @click="remove(index)") &times;
+
+      .field
+        .input-container
+          input(type="url",id="social", name="social", placeholder="https://minegocio.com", x-model="value", x-ref="inputAdd", @keydown.enter.prevent="add")
+          button.text-md(type="button", aria-label="Agregar red social", @click="add", @keypress.space="add") +
+        p.help.is-error(x-show="error") Introduce una URL válida.
+
+      input(type="hidden", name="webs", :value="networks")
+
+
+  label Enlaces oficiales #[span.has-text-grey (Mínimo 1 enlace)]
+  p.is-label-subtitle Enlaces a redes sociales asociadas al socio
+  div(x-data="socialMedia")
+    template(x-for="net, index in networks")
+      .field
+        .input-container
+          input(disabled, :value="net")
+          button.text-md.button.is-danger(type="button", aria-label="Quitar red social", @click="remove(index)") &times;
+
+    .field
+      .input-container
+        input(type="url",id="social", name="social", placeholder="https://facebook.com/usuario", x-model="value", x-ref="inputAdd", @keydown.enter.prevent="add")
+        button.text-md(type="button", aria-label="Agregar red social", @click="add", @keypress.space="add") +
+      p.help.is-error(x-show="error") Introduce una URL válida.
+
+    input(type="hidden", name="networks", :value="networks")
+
+  .field
+    p.is-label Etiquetas del socio #[span.has-text-grey (Opcional)]
+    p.is-label-subtitle Opción múltiple
+    // NOTE: Para el edit, checkboxGroup debe recibir como arumento un array o un string de los valores separado por comas
+    // NOTE: Ej.1 x-data="checkboxGroup(['cafe', 'flores'])"
+    // NOTE: Ej.2 x-data="checkboxGroup('cafe,flores')"
+    fieldset.checkbox-group.grid.w-100(x-data="checkboxGroup")
+      label
+        input(type="checkbox", x-model="values", value="productosmexicanos") 
+        | Productos mexicanos
+
+      label
+        input(type="checkbox", x-model="values", value="certificacionorganica") 
+        | Certificación orgánica
+
+      label
+        input(type="checkbox", x-model="values", value="agricultura") 
+        | Agricultura
+
+      label
+        input(type="checkbox", x-model="values", value="tecnologiasagricolasavanzadas") 
+        | Tecnologías agrícolas avanzadas
+
+      label
+        input(type="checkbox", x-model="values", value="cultivosorganicos") 
+        | Cultivos orgánicos
+
+      label
+        input(type="checkbox", x-model="values", value="mitigacioncambioclimatico") 
+        | Mitigación al cambio climático
+
+      label
+        input(type="checkbox", x-model="values", value="innovacionagricola") 
+        | Innovación agrícola
+
+      label
+        input(type="checkbox", x-model="values", value="hechoenmexico") 
+        | Hecho en México
+
+      label
+        input(type="checkbox", x-model="values", value="ventaflores") 
+        | Venta de flores
+
+      label
+        input(type="checkbox", x-model="values", value="comerciojustoagricultura") 
+        | Comercio justo en agricultura
+
+      label
+        input(type="checkbox", x-model="values", value="viveros") 
+        | Viveros
+
+      label
+        input(type="checkbox", x-model="values", value="reduccionhuellacarbono") 
+        | Reducción de huella al carbono
+
+      label
+        input(type="checkbox", x-model="values", value="productocultivadoenmexico") 
+        | Producto cultivado en México
+
+      label
+        input(type="checkbox", x-model="values", value="empresamexicana") 
+        | Empresa mexicana
+
+      label
+        input(type="checkbox", x-model="values", value="alianzproductores") 
+        | Alianza en pequeños productores
+
+      label
+        input(type="checkbox", x-model="values", value="energiarenovableagricultura") 
+        | Energía renovable en agricultura
+
+      label
+        input(type="checkbox", x-model="values", value="buenaspracticasambientales") 
+        | Buenas prácticas ambientales
+
+      label
+        input(type="checkbox", x-model="values", value="agriculturaregenerativa") 
+        | Agricultura regenerativa
+
+      label
+        input(type="checkbox", x-model="values", value="ciudadomedioambiente") 
+        | Ciudado del medio ambiente
+
+      label
+        input(type="checkbox", x-model="values", value="agriculturasostenible") 
+        | Agricultura sostenible
+
+      label
+        input(type="checkbox", x-model="values", value="flores") 
+        | Flores
+
+      label
+        input(type="checkbox", x-model="values", value="agroecologia") 
+        | Agroecología
+
+      label
+        input(type="checkbox", x-model="values", value="agroindustriasostenible") 
+        | Agroindustria sustentable
+
+      label
+        input(type="checkbox", x-model="values", value="practicasambientales") 
+        | Prácticas ambientales
+
+      label
+        input(type="checkbox", x-model="values", value="usoeficienteagua") 
+        | Uso eficiente del agua
+
+      label
+        input(type="checkbox", x-model="values", value="agroindustriasustentable") 
+        | Agroindustria sustentable
+
+      label
+        input(type="checkbox", x-model="values", value="calidadcultivo") 
+        | Calidad en cultivo
+
+      label
+        input(type="checkbox", x-model="values", value="ciudadosostenible") 
+        | Ciudado Sostenible
+
+      input(type="hidden", name="etiquetas", x-bind="inputValues")
+

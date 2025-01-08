@@ -1,0 +1,6 @@
+mixin modal({title="Modal", name="modal", titleClass="has-text-success"})
+  dialog.modal(data-modal-name=name)
+    button.modal-close(type="button", aria-label="Cerrar modal", x-bind="modalClose") &times;
+    .modal-container
+      p.title-m.has-text-centered.is-uppercase(class=titleClass)= title 
+      block

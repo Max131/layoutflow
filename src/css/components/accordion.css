@@ -1,0 +1,68 @@
+@layer components {
+  .accordion {
+    border-bottom: 1px solid currentcolor;
+
+    summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 0.25rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      gap: 1rem;
+      list-style: none;
+      transition: color 300ms;
+
+      &::after {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-top: 2px solid currentcolor;
+        border-right: 2px solid currentcolor;
+        margin-right: 0.25rem;
+        content: '';
+        rotate: 135deg;
+        transform-origin: center;
+        transition: rotate 250ms;
+      }
+    }
+
+    &.is-primary {
+      --accordion-accent: var(--color-primary);
+
+      summary {
+        border-bottom-color: var(--color-text-dark);
+      }
+    }
+
+    &[open] summary,
+    & summary:hover {
+      color: var(--accordion-accent);
+    }
+
+    &[open] summary::after {
+      border-color: var(--accordion-accent);
+      rotate: -45deg;
+    }
+
+    & + .accordion {
+      margin-top: 2rem;
+    }
+  }
+
+  .semester-info-button {
+    border: 0;
+    background: none;
+    color: currentcolor;
+    cursor: pointer;
+    text-align: left;
+    transition: color 200ms;
+
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    &.is-active {
+      color: var(--color-active);
+    }
+  }
+}

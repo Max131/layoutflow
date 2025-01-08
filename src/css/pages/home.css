@@ -1,0 +1,22 @@
+@layer components {
+  .home-discover {
+    position: relative;
+    background: linear-gradient(
+      0deg,
+      rgb(31 60 138 / 0%) 0%,
+      var(--color-primary) 100%
+    );
+  }
+
+  .home-discover-container {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background: var(--color-light);
+    box-shadow: 0 4px 40px rgb(0 0 0 / 14%);
+    margin-block: -2.75rem var(--margin-bottom-xl);
+  }
+
+  .home-news {
+    margin-block-end: var(--margin-bottom-xl);
+  }
+}

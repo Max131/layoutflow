@@ -1,0 +1,46 @@
+extends ../templates/default
+block vars
+ - title = "Quienes somos"
+ - classes = "quienes-somos"
+block content
+  .container
+    section.hero.is-medium
+      .hero-container
+        // Hero Card
+        div.hero-card
+          // Imagen Hero Card
+          img.hero-image(src="images/demo/image-2.jpg", alt="", loading="lazy")
+          // Contenido Hero Card
+          .container.hero-card-container
+            .hero-content.is-flex.is-columns.is-end
+              // Título Hero Card
+              p.text-regular-italic-l.has-text-white Mercados por un Futuro Sostenible
+              h1.title-l.has-text-white.is-uppercase Quiénes Somos
+
+    section.mt-2
+      h2.title-m.has-text-accent.is-uppercase.has-text-centered En Mercados por un Futuro Sostenible (MFS)
+      .container.profile-view-product-info.has-text-centered.has-margin-bottom 
+        p Impulsamos el financiamiento de proyectos de impacto de alta calidad que generan beneficios concretos en las áreas clave de la estrategia global de Rainforest Alliance: Agricultura Regenerativa y Paisajes Prósperos. A través de nuestra plataforma, conectamos a inversionistas, organizaciones, actores de las cadenas de suministro y productores con iniciativas que promueven prácticas sostenibles, mejoran el bienestar de las comunidades y restauran los ecosistemas naturales.
+        p Nuestro enfoque combina un robusto sistema de gestión del impacto ESG (ambiental, social y de gobernanza) con un esquema innovador de financiamiento basado en activos de impacto. Esto nos permite ofrecer métricas consistentes y transparentes, que aseguran que cada inversión genera resultados medibles en términos de sostenibilidad y regeneración.
+      .container.has-margin-bottom 
+        article.grid.columns-2
+          div
+            h3.title-m.has-text-primary.mt-0 El Portafolio de Proyectos de Impacto de Mercados por un Futuro Sostenible
+            div.mt-4
+              p Está compuesto por una selección de iniciativas que generan beneficios medibles en las áreas de sostenibilidad, regeneración ambiental y desarrollo social. Nuestros proyectos no solo buscan maximizar el impacto positivo en el medio ambiente, sino también mejorar las condiciones socioeconómicas de los productores, promoviendo prácticas agrícolas sostenibles que aumentan sus ingresos y resiliencia frente al cambio climático. ¡
+              p Cada iniciativa es evaluada rigurosamente bajo un sistema de gestión de impacto ESG, asegurando que cumpla con los más altos estándares en términos de gobernanza ambiental y social. Invertir en nuestro portafolio no solo significa apoyar iniciativas sostenibles, sino también ser parte de un movimiento global hacia la regeneración de la naturaleza y el desarrollo comunitario.
+            .buttons
+              a.button(href="#") Conoce más
+          .is-flex.is-end
+            img(src="images/demo/image-7.png", alt="", loading="lazy")
+      .container.has-margin-bottom 
+        article.grid.columns-2
+          div
+            h3.title-m.has-text-primary.mt-0 Unidos para promover el mercado responsable de...
+            img(src="images/demo/image-6.png", alt="", loading="lazy")
+          div
+            div.mt-4
+              p Está compuesto por una selección de iniciativas que generan beneficios medibles en las áreas de sostenibilidad, regeneración ambiental y desarrollo social. Nuestros proyectos no solo buscan maximizar el impacto positivo en el medio ambiente, sino también mejorar las condiciones socioeconómicas de los productores, promoviendo prácticas agrícolas sostenibles que aumentan sus ingresos y resiliencia frente al cambio climático. ¡
+              p Cada iniciativa es evaluada rigurosamente bajo un sistema de gestión de impacto ESG, asegurando que cumpla con los más altos estándares en términos de gobernanza ambiental y social. Invertir en nuestro portafolio no solo significa apoyar iniciativas sostenibles, sino también ser parte de un movimiento global hacia la regeneración de la naturaleza y el desarrollo comunitario.
+            .buttons
+              a.button(href="#") Conoce más

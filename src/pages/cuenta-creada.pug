@@ -1,0 +1,15 @@
+extends ../templates/default
+block vars
+ - title = "Cuenta creada"
+ - classes = ""
+block content
+  .container
+    .modal-container
+      p.title-m.has-text-accent.has-text-centered.is-uppercase ¡Gracias por registrarte!
+      p #[strong Tu cuenta ha sido creada exitosamente], pero antes de que puedas acceder, necesitamos revisar y aprobar tu solicitud. Esto es para garantizar la seguridad y calidad de nuestra comunidad.
+      p Recibirás una notificación por correo electrónico cuando tu cuenta haya sido verificada. Este proceso puede tomar hasta 24-48 horas.
+      p Agradecemos tu paciencia.
+
+      .buttons.are-vertical
+        a.button.is-fullwidth(href="/") Ir al inicio
+

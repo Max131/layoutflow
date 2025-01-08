@@ -1,0 +1,21 @@
+@layer components {
+  .box {
+    padding: 1rem 5rem 2rem;
+    border-radius: 1rem;
+    background: var(--color-background-dark-alt);
+    color: var(--color-text-light);
+
+    @media (--mobile) {
+      padding-inline: 1rem;
+    }
+
+    ol li {
+      text-align: initial;
+    }
+
+    li:not(ol li) {
+      width: fit-content;
+      margin-inline: auto;
+    }
+  }
+}

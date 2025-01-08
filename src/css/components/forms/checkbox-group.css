@@ -1,0 +1,7 @@
+.checkbox-group {
+  @media (--mobile) {
+    & > label:nth-child(2n) {
+      order: 1;
+    }
+  }
+}

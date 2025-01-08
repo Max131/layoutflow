@@ -1,0 +1,52 @@
+extends ../templates/default
+block vars
+ - title = "Categorías"
+ - classes = "categorias"
+block content
+  .container
+    h2.title-m.has-text-grey.has-text-centered Certificado Rainforest
+
+    div(x-data="{category: ''}")
+      details.dropdown.dropdown-filter.mb-2(x-ref="drop", @click.outside="$refs.drop.open=false")
+        summary Buscar por ubicación
+        .dropdown-content.has-text-white.has-text-centered
+          ul
+            // NOTE: Primer elemento obligatorio para mostrar todo
+            li
+              label
+                input(type="radio",name="cat", value="", checked, x-model="category", @click="$refs.drop.open=false")
+                span Todas
+            // NOTE: Elemento para filtrar
+            li
+              label
+                // TODO: value es el valor de la categoria
+                input(type="radio",name="cat", value="one", x-model="category", @click="$refs.drop.open=false")
+                // NOTE: Nombre de la categoria
+                span Uno
+            li
+              label
+                input(type="radio",name="cat", value="two", x-model="category", @click="$refs.drop.open=false")
+                span Dos
+            li
+              label
+                input(type="radio",name="cat", value="three", x-model="category", @click="$refs.drop.open=false")
+                span Tres
+      
+      .grid.columns-3.grid-categories
+        // TODO: El valor a comparar en category es el valor de la categoría
+        a.category-item(href="#!", data-category="one", x-show="category === 'one' || category === ''")
+          img(src="https://placehold.co/300x300/orange/white/webp", alt="")
+          p.text-lg.has-text-accent.has-text-centered Café Monte Grande
+
+        a.category-item(href="#!", data-category="two", x-show="category === 'two' || category === ''")
+          img(src="https://placehold.co/600x300/deeppink/white/webp", alt="")
+          p.text-lg.has-text-accent.has-text-centered 7eleven
+
+        a.category-item(href="#!", data-category="three", x-show="category === 'three' || category === ''")
+          img(src="https://placehold.co/300x600/slateblue/white/webp", alt="")
+          p.text-lg.has-text-accent.has-text-centered Café Blasón
+
+        a.category-item(href="#!", data-category="two", x-show="category === 'two' || category === ''")
+          img(src="https://placehold.co/400x400/salmon/white/webp", alt="")
+          p.text-lg.has-text-accent.has-text-centered Drink Plus
+

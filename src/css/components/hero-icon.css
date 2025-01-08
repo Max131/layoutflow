@@ -1,0 +1,10 @@
+@layer components {
+  .hero-icon {
+    display: block;
+    width: var(--hero-icon-size);
+    height: var(--hero-icon-size);
+    margin-bottom: 1rem;
+    margin-inline: auto;
+    object-fit: contain;
+  }
+}

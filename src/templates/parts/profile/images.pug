@@ -1,0 +1,52 @@
+fieldset(data-form-step="2", x-show="currentStep === +$el.dataset.formStep", x-transition, x-cloak)
+  //- legend Foto de perfíl
+  .field
+    label(data-required) Foto de perfil
+    p.is-label-subtitle Logotipo (Máximo 1 imagen)
+    .input-preview(x-data="imagePreview")
+      label.input-file(x-data="inputfile", x-bind="label", for="profile_image", tabindex="0") Seleccionar archivo:
+        span.input-file-name(x-text="filename", x-effect="image = getFile") 
+        button.text-md(type="button", x-bind="deleteFile") &times;
+        input(type="file", id="profile_image", name="profile_image", hidden, accept="image/*", x-bind="filefield")
+      img.input-preview-image(:src="imagePreview", alt="Imagen de perfil", x-show="imagePreview")
+
+    // NOTE: Nota para archivos
+    p.text-sm.my-0(role="note")
+      strong Nota:
+      | El archivo que selecciones, reemplazará al anterior (en caso de existir).
+
+    // NOTE: Lista de archivos
+    article.current-files.mt-0
+      p.my-0 Archivo actual:
+      .input-file-list.my-1
+        .input-container
+          input(type="text", disabled, value="archivo1.jpg")
+
+  .field
+    label Fotos adicionales #[span.has-text-grey Opcional]
+    p.is-label-subtitle Imágenes de producto, promocionales, locación, etc.
+    .input-file-multiple(x-data="inputfileMultiple")
+      label.input-file-multiple-label(for="file_productos", tabindex="0", x-bind="label") Click aquí para subir archivos
+      input(type="file", id="file_productos", name="file_productos", multiple, hidden, x-bind="filefield")
+      .input-file-list
+        template(x-for="(file, index) in files" :key="file.name")
+          .input-container
+            input(type="text", disabled, :value="`${file.name} (${getFileSize(file.size)})`")
+            button.text-md(type="button", @click="removeFile(index)") &times;
+
+    // NOTE: Nota para archivos
+    p.text-sm.my-0(role="note")
+      strong Nota:
+      | El archivo que selecciones, reemplazará al anterior (en caso de existir).
+
+    // NOTE: Lista de archivos
+    article.current-files.mt-0
+      p.my-0 Archivos actuales:
+      .input-file-list.my-1
+        .input-container
+          input(type="text", disabled, value="archivo1.jpg")
+        .input-container
+          input(type="text", disabled, value="archivo2.jpg")
+        .input-container
+          input(type="text", disabled, value="archivo3.jpg")
+

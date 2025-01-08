@@ -1,0 +1,41 @@
+.input-container {
+  display: flex;
+  width: 100%;
+  border: var(--controls-border);
+  border-radius: var(--controls-radius);
+  background: none;
+  color: currentcolor;
+  font-size: var(--font-sm);
+  line-height: 1.214;
+
+  &:focus-within {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  button {
+    width: 2rem;
+    padding: 0;
+    border: 0;
+    border-radius: 0 3px 3px 0;
+    appearance: none;
+    cursor: pointer;
+    font-size: var(--font-tiny);
+  }
+
+  input,
+  .input {
+    padding: 0;
+    border: 0;
+    margin: var(--controls-padding);
+    outline: 0;
+
+    &:focus-visible {
+      outline: 0;
+    }
+
+    &[type="text"]:has(+ button) + [data-reveal] {
+      opacity: 0.25;
+    }
+  }
+}

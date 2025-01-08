@@ -1,0 +1,81 @@
+header.site-header
+  .container.navbar-container
+    nav.navbar(x-data="menu")
+      .navbar-brand
+        a(href="/", aria-label="Inicio")
+          img(src="images/logo-text.png", alt="", loading="lazy")
+        a.menu-link.is-hidden-desktop.ml-auto.mr-1(href="#!", aria-label="Idioma/Language")
+          img(src="images/icons/lang.png", alt="", aria-hidden="true")
+        button.button-menu(aria-label="Menu", x-bind="trigger", :aria-expanded="isOpen") &#9776;
+
+      .navbar-menu(x-bind="target")
+        .navbar-start
+          ul.menu
+            li.menu-item
+              a.menu-link(href="#!") En alianza
+            li.menu-item
+              a.menu-link(href="#!") Directorio
+            li.menu-item
+              a.menu-link(href="#!") Blog
+            li.menu-item
+              a.menu-link(href="#!") Prensa
+            li.menu-item
+              a.menu-link(href="#!")  Para empresas
+          .menu-item.menu-item-login
+              a.menu-link.button.is-success(href="/") Iniciar sesión
+
+        .navbar-end
+          ul.menu
+            li.menu-item
+              a.menu-link(href="#!", aria-label="Facebook")
+                img(src="images/icons/facebook.svg", alt="", aria-hidden="true")
+            li.menu-item
+              a.menu-link(href="#!", aria-label="x/Twitter")
+                img(src="images/icons/x.svg", alt="", aria-hidden="true")
+            li.menu-item
+              a.menu-link(href="#!", aria-label="Instagram")
+                img(src="images/icons/instagram.svg", alt="", aria-hidden="true")
+            li.menu-item
+              a.menu-link(href="#!", aria-label="YouTube")
+                img(src="images/icons/youtube.svg", alt="", aria-hidden="true")
+            li.menu-item
+              a.menu-link(href="#!", aria-label="Idioma/Language")
+                img(src="images/icons/lang.png", alt="", aria-hidden="true")
+
+  .container.is-fullwidth.has-background-accent.header-search-bar
+    details.dropdown.dropdown-header(x-data, @click.outside="$el.open=false")
+      summary Categorías
+      .dropdown-content
+        ul
+          li
+            a(href="#!") Certificado rainforest
+          li
+            a(href="#!") Café
+          li
+            a(href="#!") Productos para mayorístas
+          li
+            a(href="#!") Deruvados de cacao
+          li
+            a(href="#!") Restaurantes
+          li
+            a(href="#!") Turismo y entretenimiento
+          li
+            a(href="#!") Hogar
+          li
+            a(href="#!") Frutas y hortalizas
+          li
+            a(href="#!") Flores
+          li
+            a(href="#!") Puntos de venta especializados
+          li
+            a(href="#!") Otros alimentos
+
+    search.search
+      form.search-form
+        .input-container
+          input(type="search")
+          button.button.is-success
+            img(src="images/icons/search.svg", alt="")
+
+    .search-bar-image
+      img(src="images/header-image.png", alt="")

@@ -1,0 +1,8 @@
+.site-header {
+  --container-padding-inline: 0px;
+
+  position: sticky;
+  z-index: var(--z-1);
+  top: 0;
+  background: var(--color-light);
+}

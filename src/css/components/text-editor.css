@@ -1,0 +1,6 @@
+.content-editor {
+  h3 {
+    font-size: var(--headline-m);
+    color: var(--color-primary);
+  }
+}

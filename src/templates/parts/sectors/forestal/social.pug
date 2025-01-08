@@ -1,0 +1,31 @@
+fieldset(data-form-step="5", x-show="currentStep === +$el.dataset.formStep", x-transition, x-cloak)
+  legend Social
+  .field
+    label(for="pregunta_16") 5.1 Indica cuáles han sido las capacitaciones recibidas para el fortalecimiento de tu actividad productiva, favor de incluir evidencia. Ejemplo: Capacitación en el Manejo Sostenible de Recursos Forestales, capacitación en la Atención y Combate de Incendios, promovidos por el Gobiernos del Estado, a través de la Secretaría del Medio Ambiente
+    textarea(id="pregunta_16", name="pregunta_16")
+
+  .field
+    label(for="pregunta_17") 5.2 En el caso de que la iniciativa promueva relaciones de trabajo, menciona cómo se promueven las condiciones de trabajo dignas para las y los productores forestales y si reciben previa capacitación para el correcto desempeño de sus funciones. Ejemplo: (Empresa forestal) Se proporciona equipo de seguridad a todo el personal que opera en área de corta, aserradero y maquinaria, se brinda acceso a servicios básicos como sanitarios y agua potable a 200 trabajadores y trabajadoras, también se cuenta con seguro médico para la atención oportuna de enfermedades y accidentes. Capacitación al personal en el derribo y direccionamiento del arbolado. (Talleres) Nuestra relación laboral con los trabajadores se apega a las regulaciones de trabajo de la normatividad mexicana (jornada laboral, salario, días de descanso, vacaciones, seguridad social)
+    textarea(id="pregunta_17", name="pregunta_17")
+
+  .field
+    label(for="pregunta_18") 5.3 Han recibido algún premio o reconocimiento, si o no. Favor de mencionar cuál o cuáles han sido estos reconocimientos (por su producto, por su labor, por sus buenas prácticas. Ejemplo: Premio al Mérito Forestal
+    textarea(id="pregunta_18", name="pregunta_18")
+
+  .field
+    label(for="pregunta_19") 5.4 Mencione si su ejido o empresa fomenta la participación e inclusión de jóvenes y mujeres en sus actividades y cómo lo hace. Ejemplo: En el ejido/empresa fomentamos que los jóvenes realicen prácticas en las diferentes áreas de trabajo con la finalidad de que identifiquen sus habilidades y desarrollen un plan de especialización
+    textarea(id="pregunta_19", name="pregunta_19")
+
+  .field
+    label(for="file") 5.5 Seleccione el rubro de su empresa o ejido y en el cuadro que le corresponda mencione ¿Cuántas productoras/es se benefician de la comercialización de su madera o productos terminados (desglosar en hombres y mujeres) y ¿Cuántas hectáreas son impactadas con un mejor manejo de los recursos naturales gracias a su trabajo?
+    p Para responder, descarga el formato del siguiente enlace, llenalo y adjuntalo en el siguiente campo: #[a(href="#!") Formato de Trazabilidad].
+    .field
+      label.button.is-outlined.is-file(x-data="inputfile", for="file", tabindex="0") Seleccionar archivo:
+        span.has-text-accent(x-text="filename")
+        input(type="file", id="file", name="file", accept=".xls, .xlsx", hidden, x-bind="filefield")
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+extends ../templates/default
+block vars
+ - title = "Convocatoria"
+ - classes = "convocatoria"
+block content
+  .container.has-margin-bottom
+    section.hero.is-medium
+      .hero-container
+        // Hero Card
+        div.hero-card
+          // Imagen Hero Card
+          img.hero-image(src="images/demo/image-2.jpg", alt="", loading="lazy")
+          // Contenido Hero Card
+          .container.hero-card-container
+            .hero-content.is-flex.is-columns.is-end
+              // Título Hero Card
+              p.text-regular-italic-l.has-text-white Participa
+              h1.title-l.has-text-white.is-uppercase Convocatorias
+
+    section
+      // Aquí va el contenido del single actual

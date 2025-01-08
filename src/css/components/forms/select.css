@@ -1,0 +1,21 @@
+@layer base {
+  select {
+    width: 100%;
+    padding: var(--controls-padding);
+    border: var(--controls-border);
+    border-radius: var(--controls-radius);
+    background: none;
+    color: var(--color-text-dark);
+    cursor: pointer;
+    font-size: var(--font-sm);
+
+    &:placeholder-shown {
+      color: var(--color-text-lighter);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+  }
+}

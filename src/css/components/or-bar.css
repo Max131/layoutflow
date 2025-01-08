@@ -1,0 +1,36 @@
+.or-bar {
+  display: grid;
+  height: 1.5rem;
+  background: none;
+  grid-template-areas: 'stack';
+  margin-block: 2rem;
+  place-items: center;
+
+  & > * {
+    grid-area: stack;
+  }
+
+  &::before {
+    position: relative;
+    z-index: -1;
+    top: 1rem;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: var(--controls-border-color);
+    content: '';
+  }
+
+  &::after {
+    width: min(14rem, 100% - 2rem);
+    min-width: fit-content;
+    background: var(--color-background);
+    content: 'ó';
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &[data-or-text]::after {
+    content: attr(data-or-text);
+  }
+}

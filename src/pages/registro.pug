@@ -1,0 +1,94 @@
+extends ../templates/default
+block vars
+ - title = "Crear nueva cuenta"
+ - classes = ""
+block content
+  .container
+    h2.has-text-grey.has-font-secondary.mb-0 Crear nueva cuenta
+    form.new-account-container(x-data="form({actionURL: 'http://mercados/wp-json/custom/v1/register'})", x-bind="form")
+      .new-account-content
+        p.text-lg.mt-0 En esta alianza buscamos acciones claras y planes concretos en la mitigación del cambio climático, la reforestación y restauración de los paisajes, las prácticas forestales y agrícolas responsables y el mejoramiento de los medios de vida de las y los productores. Rainforest Alliance implementará las medidas de seguridad técnica, administrativa y física, necesaria para procurar la integridad de sus datos personales y evitar su daño, pérdida, alteración, destrucción o el uso, acceso o tratamiento no autorizado.
+
+        .message(x-cloak, x-show="message", :class="{[messageType]: messageType}", x-transition)
+          p(x-text="message")
+
+        fieldset(x-data="passwordsCompare")
+          legend Cuenta
+          .field
+            label(for="user") Usuario
+            input(type="text",id="user", name="user", required, placeholder="Juan Pérez")
+
+          .field(x-data="inputPassword")
+            label(for="password") Contraseña
+            .input-container
+              input(x-model="pass1", :type="showPassword? 'text': 'password'", id="password", name="password", required, minlength="1", placeholder="password")
+              button(type="button", x-bind="toggle", :aria-label="showPassword? 'Ocultar contraseña':'Mostrar contraseña'")
+                img(src="images/icons/eye.svg", alt="")
+
+          .field(x-data="inputPassword")
+            label(for="password-confirm") Escriba nuevamente su contraseña
+            .input-container
+              input(x-model="pass2", :type="showPassword? 'text': 'password'", id="password-confirm", name="password-confirm", required, minlength="1", placeholder="password")
+              button(type="button", x-bind="toggle", :aria-label="showPassword? 'Ocultar contraseña':'Mostrar contraseña'")
+                img(src="images/icons/eye.svg", alt="")
+
+            .message.is-error.my-1(x-show="!match", x-transition) Las contraseñas deben coincidir
+              
+
+          .field
+            label(for="sector") Sector
+            select(id="sector", name="sector", required)
+              // Primer opción con texto de acuerdo al select y siempre se pinta
+              option(value="", disabled, selected) Seleccione un sector
+              option(value="productor") Productor
+              option(value="forestal") Forestal
+              option(value="servicios") Servicios
+              option(value="transformacion") Transformación
+
+        fieldset
+          legend Datos generales
+
+          .field
+            label(for="company") Nombre de la empresa
+            input(type="text",id="company", name="company", required, placeholder="Mi compañía")
+
+          .field
+            label(for="address") Dirección
+            input(type="text",id="address", name="address", required, placeholder="Calle, Avenida, Circuito")
+
+          .field
+            label(for="legal") Representante legal
+            input(type="text",id="legal", name="legal", placeholder="Carlos Pérez")
+              
+          .field
+            label(for="phone") Teléfono
+            input(type="tel",id="phone", name="phone", required, placeholder="+52 123-456-7890")
+              
+          .field
+            label(for="email") Correo electrónico
+            input(type="email",id="email", name="email", required, placeholder="usuario@correo.com")
+              
+          label Redes sociales
+          div(x-data="socialMedia")
+            template(x-for="net, index in networks")
+              .field
+                .input-container
+                  input(disabled, :value="net")
+                  button.text-md.button.is-danger(type="button", aria-label="Quitar red social", @click="remove(index)") &times;
+
+            .field
+              .input-container
+                input(type="url",id="social", name="social", placeholder="https://facebook.com/usuario", x-model="value", x-ref="inputAdd", @keydown.enter.prevent="add")
+                button.text-md(type="button", aria-label="Agregar red social", @click="add", @keypress.space="add") +
+              p.help.is-error(x-show="error") Introduce una URL válida.
+
+            input(type="hidden", name="networks", :value="networks")
+
+          .form-notice
+            p Cuéntenos en cifras, las acciones, logros concretos y su compromiso por un futuro sostenible. Esta información nos ayudará a visibilizar sus acciones en la alianza, en el sector y al consumidor.
+
+      .new-account-buttons
+        .buttons.are-vertical
+          button.button.is-fullwidth.is-success(value="next", :class="{'is-loading': isLoading}", @click="sendForm") Siguiente
+          a.button.is-fullwidth(href="/") Cancelar
+        

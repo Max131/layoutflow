@@ -1,0 +1,30 @@
+.editor-wrapper {
+  width: 100%;
+  border: var(--controls-border) !important;
+  border-radius: var(--controls-radius);
+
+  &:focus-within {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  & + .input-file {
+    margin-top: 0.5rem;
+  }
+}
+
+.ql-toolbar,
+.editor {
+  border: 0 !important;
+}
+
+.ql-toolbar {
+  width: calc(100% - 1rem);
+  border-bottom: 1px solid var(--controls-border-color) !important;
+  margin-bottom: 0.5rem;
+  margin-inline: auto;
+}
+
+.editor {
+  height: 16rem !important;
+}

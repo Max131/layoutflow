@@ -1,0 +1,7 @@
+.help {
+  font-size: var(--font-sm);
+
+  &.is-error {
+    color: var(--color-error);
+  }
+}

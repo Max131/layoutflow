@@ -1,0 +1,20 @@
+.message {
+  padding: 0.25rem 1rem;
+  border-radius: var(--controls-radius);
+  background-color: color-mix(in srgb, var(--color-disabled), transparent 80%);
+  font-weight: 700;
+
+  &.is-large {
+    font-size: var(--font-l);
+  }
+
+  &.is-error {
+    background-color: color-mix(in srgb, var(--color-error), transparent 95%);
+    color: var(--color-error);
+  }
+
+  &.is-success {
+    background-color: color-mix(in srgb, var(--color-success), transparent 95%);
+    color: var(--color-success);
+  }
+}
