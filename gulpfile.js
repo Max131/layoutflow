@@ -67,7 +67,8 @@ export const css = () => {
             console: true
           }
         ],
-        fix: true
+        fix: true,
+        failAfterError: false
       })
     )
     .pipe(prettier())
