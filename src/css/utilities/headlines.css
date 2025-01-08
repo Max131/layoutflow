@@ -1,6 +1,14 @@
 /* Headlines/Titles */
 
-:is(.title-xxl, .title-xl, .title-l, .title-m, .title-s, .title-xs, .title-xs-500) {
+:is(
+  .title-xxl,
+  .title-xl,
+  .title-l,
+  .title-m,
+  .title-s,
+  .title-xs,
+  .title-xs-500
+) {
   font-family: var(--font-secondary), sans-serif;
 }
 
@@ -34,10 +42,10 @@
 }
 
 .title-second-l {
+  font-family: var(--font-primary);
   font-size: clamp(var(--font-m), var(--font-m) + 2.25vw, var(--headline-l));
   line-height: 1.1;
   text-wrap: balance;
-  font-family: var(--font-primary);
 }
 
 .title-l-bold {
@@ -67,4 +75,3 @@
   font-size: var(--headline-xs);
   font-weight: 500;
 }
-

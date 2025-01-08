@@ -1,6 +1,0 @@
-.form-profile {
-  :where(label, .is-label):not(:has(> [type="checkbox"]), .input-file) {
-    color: var(--color-primary);
-    font-size: var(--font-m);
-  }
-}

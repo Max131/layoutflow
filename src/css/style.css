@@ -9,10 +9,12 @@
 @layer reset, base, layout, components, pages, utils;
 
 @import "variables.css";
-@import "font.css";
+
+/* @import "font.css"; */
 @import "modern-normalize" layer(reset);
 @import "base.css" layer(base);
 @import "layout" layer(layout);
 @import "components" layer(components);
-@import "pages" layer(pages);
+
+/* @import "pages" layer(pages); */
 @import "utilities" layer(utilities);

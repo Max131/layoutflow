@@ -1,28 +1,10 @@
-/* Buttons */
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-
-  &.are-right {
-    justify-content: flex-end;
-  }
-
-  &.are-centered {
-    justify-content: center;
-  }
-
-  &.are-vertical {
-    flex-direction: column;
-    align-items: flex-start;
-
-    &.are-centered {
-      align-items: center;
-    }
-  }
-}
-
 .button {
+  --button-text-color: var(--color-text-light);
+  --button-paddings: 1em 1.125em;
+  --button-background: var(--color-primary);
+  --button-font-size: var(--font-normal);
+  --button-border-radius: 3px;
+  --button-active-transparency: 30%;
   --button-icon-size: 1.5cap;
 
   display: inline-flex;
@@ -76,6 +58,7 @@
     --button-text-color: var(--color-text);
     --button-border-color: var(--white);
   }
+
   &.is-current {
     --button-background: var(--light-grey);
     --button-text-color: var(--color-text);
@@ -84,7 +67,9 @@
 
   &.is-large {
     --button-paddings: 1em 4em;
+
     width: auto;
+
     @media (--mobile) {
       --button-paddings: 1em 2em;
     }
@@ -199,8 +184,8 @@
   }
 
   &:hover {
-    box-shadow: 0 0 20px -8px color-mix(in srgb, var(--color-dark), transparent
-          50%);
+    box-shadow: 0 0 20px -8px
+      color-mix(in srgb, var(--color-dark), transparent 50%);
   }
 
   &:is(:focus, :active, .is-selected) {
@@ -225,6 +210,7 @@
   font-size: var(--font-normal);
   font-weight: 700;
   text-decoration: none;
+
   &:hover {
     text-decoration: underline;
   }
@@ -233,18 +219,18 @@
 .button-is-icon {
   --button-icon-size: 2rem;
 
-  align-items: center;
-  background: var(--color-background);
-  border: 4px solid var(--black);
-  cursor: pointer;
-  margin-bottom: 1rem;
   display: inline-flex;
+  align-items: center;
   justify-content: center;
+  padding: 0.5rem;
+  border: 4px solid var(--black);
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  aspect-ratio: 1;
+  background: var(--color-background);
+  cursor: pointer;
   text-decoration: none;
   transition: box-shadow var(--transition-timing, 300ms);
-  aspect-ratio: 1;
-  padding: 0.5rem;
-  border-radius: 50%;
 
   img {
     width: var(--button-icon-size);
@@ -253,32 +239,31 @@
   }
 
   &:is(:focus-within, :focus) {
-      outline: 0;
-    }
-
-  &:hover {
-    box-shadow: 0 0 20px -8px color-mix(in srgb, var(--color-dark), transparent
-          50%);
+    outline: 0;
   }
 
+  &:hover {
+    box-shadow: 0 0 20px -8px
+      color-mix(in srgb, var(--color-dark), transparent 50%);
+  }
 }
 
 .button-is-area {
   --button-icon-size: 5rem;
 
   display: flex;
-  gap: 0.3rem;
   flex-direction: column;
   align-items: center;
-  background: none;
+  padding: 0.5rem;
   border: none;
-  cursor: pointer;
+  border-radius: 1rem;
   margin-bottom: 1rem;
+  background: none;
+  cursor: pointer;
+  font-size: var(--font-sm);
+  gap: 0.3rem;
   text-decoration: none;
   transition: box-shadow var(--transition-timing, 300ms);
-  padding: 0.5rem;
-  font-size: var(--font-sm);
-  border-radius: 1rem;
 
   img {
     width: var(--button-icon-size);
@@ -287,13 +272,11 @@
   }
 
   &:is(:focus-within, :focus) {
-      outline: 0;
-    }
-
-  &:hover {
-    box-shadow: 0 0 20px -8px color-mix(in srgb, var(--color-dark), transparent
-          50%);
+    outline: 0;
   }
 
+  &:hover {
+    box-shadow: 0 0 20px -8px
+      color-mix(in srgb, var(--color-dark), transparent 50%);
+  }
 }
-

@@ -1,4 +1,8 @@
 .grid {
+  --grid-gap: 1rem;
+  --grid-fill-type: auto-fill;
+  --grid-columns: 2;
+  --grid-column-min-size: 16rem;
   --gap-total: calc((var(--grid-columns) - 1) * var(--grid-gap));
   --column-size: calc((100% - var(--gap-total)) / var(--grid-columns));
 
