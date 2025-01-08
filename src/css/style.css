@@ -1,12 +1,12 @@
 /*
-  Theme Name: Mercados
+  Theme Name: 
   Author: Nodo
   Author URI: https://nodo.pw/
   Description: Mercados
   Version: 1.0
 */
 
-@layer reset, base, layout, components, pages, utils, external;
+@layer reset, base, layout, components, pages, utils;
 
 @import "variables.css";
 @import "font.css";
