@@ -5,6 +5,9 @@ html {
 body {
   display: grid;
   min-height: 100vh;
+  font:
+    400 1.125rem/1.5 system-ui,
+    sans-serif;
   grid-template-rows: auto 1fr auto;
   overflow-x: clip;
 }

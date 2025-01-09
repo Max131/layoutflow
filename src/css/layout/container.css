@@ -8,7 +8,8 @@
     [fullwidth-start] minmax(var(--container-padding-inline), 1fr)
     [main-start] minmax(auto, var(--container-width, 80ch))
     /* repeat(12, minmax(auto, calc(var(--container-width, 80ch) / 12))) */
-    [main-end] minmax(var(--container-padding-inline), 1fr) [fullwidt-end];
+    [main-end] minmax(var(--container-padding-inline), 1fr)
+    [fullwidth-end];
 
   &.is-paddingless {
     --container-padding-inline: 0px;
@@ -38,8 +39,4 @@
     grid-column: fullwidth;
     padding-inline: var(--container-padding-inline);
   }
-}
-
-.has-margin-bottom {
-  margin-bottom: var(--margin-bottom-xl);
 }
